@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,7 +25,17 @@ gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'searchkick', '~> 1.3'
-gem 'rails_12factor', group: :production
+
+
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  # Use postgresql as the database for Active Record
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
